@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>NNN</title>
+    <link rel="icon" type="image/x-icon" href="nnn.png">
+</head>
+
+<body>
+    <h1 class="h1" id="h1" onclick="nnn()">NNN.com</h1>
+    <div class="progress-container">
+        <div class="progress-bar"></div>
+    </div>
+    <span class="ad" lang="en">25% Discount at MediaMarkt</span>
+
+    <div class="item-container">
+        <button onclick="item1()" class="item1">
+            <img class="item1img"
+                src="https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_87300495/fee_325_225_png/APPLE-iPhone-13-128-GB-Ak%C4%B1ll%C4%B1-Telefon-Starlight-MLPG3TU-A">
+            <span id="item1p" class="item1price">36499</span>
+            <span class="item1name">iPhone 13</span>
+        </button>
+
+        <button onclick="item2()" class="item2">
+            <img class="item2img"
+                src="https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_98880416/fee_325_225_png/APPLE-4.Nesil-iPad-Pro-11%22-%28M2-%C3%87ip%29-WIFI-256GB-Tablet-Uzay-Grisi-MNXF3TU-A">
+            <span id="item2p" class="item2price">27899</span>
+            <span class="item2name">iPad Pro 11</span>
+        </button>
+    </div>
+
+    <style>
+        .h1 {
+            font-family: "Consolas";
+            font-size: 48px;
+            margin-top: -10px;
+            cursor: pointer;
+            color: white;
+
+            user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        .item1 {
+            border: 0px;
+            position: relative;
+            margin-top: 128px;
+            border-radius: 16px;
+            width: 370px;
+            cursor: pointer;
+            background-color: white;
+        }
+
+        .item1name {
+            font-size: 26px;
+            position: relative;
+            bottom: 200px;
+            left: 76px;
+            font-family: "Consolas";
+            font-weight: 900;
+        }
+
+        .item1img {
+            background-color: transparent;
+            position: relative;
+            margin-right: 256px;
+            margin-top: 32px;
+            right: 80px;
+        }
+        
+        .item1price {
+            position: absolute;
+            font-weight: 600;
+            font-size: 32px;
+            font-family: "Consolas";
+            bottom: 225px;
+            left: 195px;
+        }
+
+        .item2 {
+            border: 0px;
+            position: relative;
+            margin-top: 128px;
+            border-radius: 16px;
+            width: 370px;
+            cursor: pointer;
+            background-color: white;
+        }
+
+        .item2name {
+            font-size: 26px;
+            position: relative;
+            bottom: 200px;
+            left: 76px;
+            font-family: "Consolas";
+            font-weight: 900;
+        }
+
+        .item2img {
+            background-color: transparent;
+            position: relative;
+            margin-right: 256px;
+            margin-top: 32px;
+            right: 80px;
+        }
+        
+        .item2price {
+            position: absolute;
+            font-weight: 600;
+            font-size: 32px;
+            font-family: "Consolas";
+            bottom: 225px;
+            left: 200px;
+        }
+
+        .ad {
+            font-size: 32px;
+            position: fixed;
+            color: white;
+            top: 80px;
+            left: 525px;
+            font-family: "Consolas";
+
+            user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        .progress-container {
+            position: fixed;
+            left: -8px;
+            top: 64px;
+            width: 50%;
+        }
+
+        .progress-bar {
+          width: 205%;
+          height: 15px;
+          background-color: #f0f0f0;
+          position: relative;
+        }
+
+        .progress-bar::before {
+          content: '';
+          display: block;
+          height: 100%;
+          width: 100%;
+          background: repeating-linear-gradient(
+            -45deg,
+            white ,5px,
+            white  10px,
+            red 10px,
+            red 20px
+          );
+          background-size: 30px 30px;
+          animation: progress-stripes 1s linear infinite;
+        }
+
+        @keyframes progress-stripes {
+          0% {
+            background-position: 0 0;
+          }
+          100% {
+            background-position: 28px 0;
+          }
+        }
+
+        body {
+            background-color: gray;
+        }
+    </style>
+
+<script>
+    window.onload = function () {
+        const item1price = document.getElementById("item1p");
+        const item2price = document.getElementById("item2p");
+        let dollar = 28.68;
+        const int_1 = parseInt(item1price.textContent);
+        const int_2 = parseInt(item2price.textContent);
+        const item_1_price = Math.floor(int_1 / dollar);
+        const item_2_price = Math.floor(int_2 / dollar);
+        const h1 = document.getElementById("h1")
+        item1price.innerHTML = item_1_price + " USD";
+        item2price.innerHTML = item_2_price + " USD";
+        let num = 0
+        function loop() {
+            setTimeout(loop, 150);
+            num++
+            let tr = 0
+            let en = 0
+            let fr = 0
+            let ru = 0
+            let ja = 0
+            let ch = 0
+            let ca = 0
+            let uk = 0
+            let ax = 0
+            let ab = 0
+            if (num == 1 && tr == 0) {
+                tr = 1
+                h1.innerHTML = "NNN.com.tr";
+            }
+            if (num == 2 && en == 0) {
+                en = 1
+                h1.innerHTML = "NNN.com.en";
+            }
+            if (num == 3 && fr == 0) {
+                fr = 1
+                h1.innerHTML = "NNN.com.fr";
+            }
+            if (num == 4 && ru == 0) {
+                ru = 1
+                h1.innerHTML = "NNN.com.ru";
+            }
+            if (num == 5 && ja == 0) {
+                ja = 1
+                h1.innerHTML = "NNN.com.ja";
+            }
+            if (num == 6 && ch == 0) {
+                ch = 1
+                h1.innerHTML = "NNN.com.ch";
+            }
+            if (num == 7 && ca == 0) {
+                ca = 1
+                h1.innerHTML = "NNN.com.ca";
+            }
+            if (num == 8 && uk == 0) {
+                uk = 1
+                h1.innerHTML = "NNN.com.uk";
+            }
+            if (num == 9 && ax == 0) {
+                ax = 1
+                h1.innerHTML = "NNN.com.ax";
+            }
+            if (num == 10 && ab == 0) {
+                ab = 1
+                num = 0
+                h1.innerHTML = "NNN.com.ab";
+            }
+        }
+
+        loop();
+    }
+    function nnn() {
+        document.location.href = "nnn.html";
+    }
+    function item1() {
+        document.location.href = "https://www.mediamarkt.com.tr/tr/product/_apple-iphone-13-128-gb-ak%C4%B1ll%C4%B1-telefon-starlight-mlpg3tu-a-1217605.html";
+    }
+    function item2() {
+        document.location.href = "https://www.mediamarkt.com.tr/tr/product/_apple-4-nesil-ipad-pro-11-m2-%C3%A7ip-w%C4%B1f%C4%B1-256gb-tablet-uzay-grisi-mnxf3tu-a-1224919.html";
+    }
+</script>
+
+</body>
+
+</html>
